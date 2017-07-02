@@ -1,4 +1,4 @@
-# rateme2 test cha
+# rateme2
 
 ## setup
 
