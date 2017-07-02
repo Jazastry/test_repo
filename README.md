@@ -1,4 +1,4 @@
-# rateme2 test rename
+# rateme2
 
 ## setup
 
