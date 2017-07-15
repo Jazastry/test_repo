@@ -5,6 +5,17 @@
     },
     "organic-api-routes": {
       "log": true
+    },
+    "organic-emailpreview": {
+      "source": "organic-emailpreview",
+      "port": "1336",
+      "reactOn": "deliverEmail"
+    },
+    "organic-site-routes": {
+      "log": true
+    },
+    "organic-static-pages": {
+      "log": true
     }
   },
   "membrane": {

@@ -3,7 +3,8 @@
     "organic-api-routes": {
       "source": "organic-express-routes",
       "reactOn": [
-        "ExpressServer"
+        "ExpressServer",
+        "ExpressSessions"
       ],
       "pattern": "/**/*.js",
       "path": "server/http/routes",
@@ -14,13 +15,61 @@
       "source": "organic-express-response",
       "reactOn": [
         "ExpressServer",
-        "ApiRoutesReady"
+        "ApiRoutesReady",
+        "SiteRoutesReady"
       ]
     },
     "organic-express-static": {
       "source": "organic-express-static",
       "reactOn": "ExpressServer",
       "mount": "@client.public"
+    },
+    "organic-emailrender": {
+      "source": "organic-emailrender",
+      "root": "server/emails",
+      "templateEngine": "server/initializers/email-templates",
+      "cache": true,
+      "reactOn": "sendEmail",
+      "emitEmail": "deliverEmail"
+    },
+    "organic-emailsender": {
+      "source": "organic-emailsender",
+      "email": {
+        "transport": "devnull"
+      },
+      "reactOn": "deliverEmail",
+      "from": "noreply@stem-skeleton"
+    },
+    "organic-express-sessions": {
+      "source": "organic-express-mongo-sessions",
+      "reactOn": "ExpressServer",
+      "emitReady": "ExpressSessions",
+      "cookie_secret": "@secrets.cookie",
+      "db": "stem-sessions"
+    },
+    "organic-site-routes": {
+      "source": "organic-express-routes",
+      "reactOn": [
+        "ExpressServer",
+        "ApiRoutesReady"
+      ],
+      "pattern": "/**/*.js",
+      "path": "client/pages",
+      "helpers": "client/page-helpers",
+      "emitReady": "SiteRoutesReady",
+      "exclude": "_layout"
+    },
+    "organic-static-pages": {
+      "source": "organic-express-staticpages",
+      "reactOn": [
+        "ExpressServer",
+        "ApiRoutesReady",
+        "SiteRoutesReady"
+      ],
+      "pattern": "/**/*.ejs",
+      "path": "client/pages",
+      "emitReady": "StaticPagesReady",
+      "exclude": "_layout"
     }
   },
   "membrane": {
@@ -45,12 +94,27 @@
       "emitReady": "ExpressServer",
       "uploadsDir": "uploads",
       "responders": [
+        "server/http/responders/mongoose-errors",
         "server/http/responders/default"
       ],
       "expressSetupDoneOnce": [
-        "ExpressServer",
-        "ApiRoutesReady"
-      ]
+        "ApiRoutesReady",
+        "SiteRoutesReady",
+        "StaticPagesReady"
+      ],
+      "interceptors": [
+        "server/http/params"
+      ],
+      "cookie_secret": "@secrets.cookie",
+      "views": "client/pages",
+      "viewEngine": {
+        "ext": "ejs",
+        "name": "ejs"
+      }
+    },
+    "organic-mongoose": {
+      "source": "organic-mongoose",
+      "database": "@server.database"
     }
   }
 }

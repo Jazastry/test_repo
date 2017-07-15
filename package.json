@@ -2,7 +2,7 @@
   "name": "rateme2",
   "private": true,
   "version": "0.1.0",
-  "description": "Team rating webapplication.",
+  "description": "Team rating web application.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -33,7 +33,38 @@
     "organic-nucleus": "^1.0.x",
     "organic-plasma": "^1.1.x",
     "organic-plasma-feedback": "^1.0.0",
-    "angelabilities-exec": "0.1.0"
+    "angelabilities-exec": "0.1.0",
+    "organic-emailrender": "^0.1.2",
+    "organic-emailsender": "^0.3.2",
+    "email-templates": "^2.0.1",
+    "mongoose": "^4.8.0",
+    "organic-mongoose": "0.1.1",
+    "organic-express-mongo-sessions": "0.0.4",
+    "ejs": "^2.3.3",
+    "organic-express-staticpages": "0.0.3",
+    "organic-stem-devtools": "^0.2.2",
+    "string-template": "^1.0.0",
+    "organic-oval": "4.1.0",
+    "es6-promise": "^3.2.1",
+    "lodash": "^4.4.0",
+    "webpack-dna-loader": "0.0.1",
+    "domready": "^1.0.8",
+    "imports-loader": "^0.6.5",
+    "restful.js": "^0.9.6",
+    "director": "^1.2.8",
+    "whatwg-fetch": "^0.11.0",
+    "exports-loader": "^0.6.3",
+    "async-validate": "^0.13.2",
+    "form2js": "^1.0.0",
+    "email-validator": "^1.0.4",
+    "proxy-polyfill": "^0.1.6",
+    "gulp-watch": "4.3.5",
+    "glob-stream": "^5.2.0",
+    "gulp-less": "^3.0.5",
+    "gulp-less-watcher": "^0.5.0",
+    "less-plugin-autoprefix": "^1.5.1",
+    "globby": "^5.0.0",
+    "webpack": "^1.13.0"
   },
   "devDependencies": {
     "angelscripts-help": "0.2.0",
@@ -47,13 +78,26 @@
     "mocha": "^3.0.2",
     "rimraf": "^2.5.2",
     "request": "^2.69.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "organic-emailpreview": "^0.1.1",
+    "nodemon": "^1.8.1"
   },
   "engines": {
     "node": "0.10.x | >= 4.2.3"
   },
   "stack-upgrades": {
     "core": "1.0.0",
-    "mocha-chai": "1.0.0"
+    "mocha-chai": "1.0.0",
+    "emails-support": "0.1.0",
+    "mongoose": "0.1.0",
+    "mongo-sessions": "0.1.0",
+    "ejs-pages": "0.1.0",
+    "devtools": "0.2.2",
+    "devtools-client": "0.2.2",
+    "organic-oval-fu": "0.1.0",
+    "devtools-assets": "0.2.2",
+    "devtools-less": "0.2.2",
+    "devtools-webpack": "0.2.2",
+    "devtools-nodemon": "0.2.2"
   }
 }
