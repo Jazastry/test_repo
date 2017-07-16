@@ -70,6 +70,16 @@
       "path": "client/pages",
       "emitReady": "StaticPagesReady",
       "exclude": "_layout"
+    },
+    "models": {
+      "source": "organic-express-routes",
+      "reactOn": [
+        "Mongoose",
+        "ExpressServer"
+      ],
+      "pattern": "/**/*.js",
+      "path": "server/db/models",
+      "helpers": "server/db/helpers"
     }
   },
   "membrane": {
@@ -114,7 +124,11 @@
     },
     "organic-mongoose": {
       "source": "organic-mongoose",
-      "database": "@server.database"
+      "database": "@server.database",
+      "emitReady": {
+        "type": "Mongoose",
+        "data": true
+      }
     }
   }
 }
