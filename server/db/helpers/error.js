@@ -1,5 +1,3 @@
-// TEST CHANGE
-
 // Used in order to prevent returning sensitive information in error callback
 function MongoErrorFilteredDoc (err) {
   this.name = 'MongoError'
