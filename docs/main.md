@@ -1,5 +1,4 @@
 ### Test Page
-### [link to Irfan site](www.irfanband.com)
 
 ## What to do
 - first thing to do
